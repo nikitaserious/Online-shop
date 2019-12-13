@@ -1,0 +1,645 @@
+body{
+	background: linear-gradient(#aec8e1, #e8edf0); 
+}
+table{
+	background: white;
+	flex: 1 0 auto;
+}
+footer{
+	background: #2b3845;	
+	height: 30;	
+	border-right: 2px solid white;
+	display: flex;	
+	justify-content: flex-end;
+	align-items: center;
+	color: white;
+
+	
+}
+
+
+.page{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	font-family: 'Fira Sans', sans-serif;
+	overflow: hidden;
+	
+}
+.right{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: stretch;
+	flex: 1.6 1 300px;
+	max-width: 700;
+	min-height: 95%;
+	max-height: 95%;
+	
+}
+.order-list{
+	display: flex;	
+	flex-flow: column wrap;
+	min-height: 95%;
+	max-height: 95%;	
+	max-width: 300;
+	overflow-y: scroll;
+	flex: 1 0 auto;
+	
+	justify-content: flex-start;
+	align-items: flex-start;
+	
+	background:white;	
+		  
+		  
+	
+}
+.order-info{
+	display: flex;
+	
+	width: 270;
+	flex-wrap: wrap;		
+	align-content: center;	
+	background:white;	
+		   padding:5px;
+		  margin-bottom: 10px;	
+	
+}
+.order-info:hover{background: #e6ebf0}
+.order-info:hover:active{background: red}
+
+
+.order-date{
+	display: flex;
+	flex: 3 1 50px;
+	justify-content: flex-end;
+	font-size: 17pt;
+	
+}
+.order-id{
+	display: flex;
+	font-size: 13pt;
+	text-overflow: ellipsis;
+	
+}
+.order-shipped{
+	display: flex;
+	color: #808080;
+	
+}
+.order-name{
+	display: flex;
+	color: #808080;
+	flex: 4 1 100px;
+}
+.order-time{
+	display: flex;
+	flex: 5 1 150px;
+	justify-content: flex-end;
+	
+	
+}
+.accepted{
+	color: green;
+	display: flex;
+	font-size: 14px;
+	flex: 5 1 150px;
+	justify-content: flex-end;
+}
+.pending{
+	color: pink;
+	display: flex;
+	font-size: 14px;
+	flex: 5 1 150px;
+	justify-content: flex-end;
+}
+.urgent{
+	color: orange;
+	display: flex;
+	font-size: 14px;
+	flex: 5 1 150px;
+	justify-content: flex-end;
+}
+.too-late{
+	color: red;
+	display: flex;
+	font-size: 14px;
+	flex: 5 1 150px;
+	justify-content: flex-end;
+}
+.undef-status{
+	color: black;
+	display: flex;
+	font-size: 14px;
+	flex: 5 1 150px;
+	justify-content: flex-end;
+}
+.order-details{
+	display: flex;
+	
+	height: 250;
+	
+	background: #e6ebf0;	
+		   padding-left:35px;				
+}
+.order-details-left{
+	display: flex;
+	flex-direction: column;
+	align-items:  flex-start;
+	flex: 5 1 150px;
+	justify-content: space-between;
+
+}
+.order-details-right{
+	display: flex;
+	align-items: flex-end;
+	flex-direction: column;
+	flex: 1 1 150px;
+}
+.order-details-id{
+	font-size: 17pt;
+}
+.shipping-address{
+	display: flex;
+	
+	flex-direction: row;	
+	
+	height: 120;
+	
+
+}
+.shipping-params{
+	display: flex;
+	flex-direction: column;
+	align-items:flex-end;
+	justify-content: center;
+	flex: 1 1 100px;
+	background: white;
+	
+}
+.shipping-values{
+	display: flex;
+	flex-direction: column;
+	padding-top: 5px; 
+	justify-content: center;
+	flex: 3 1 100px;
+	background: white;	
+
+}
+.HR{
+	background: white;
+}
+#numberOrders{
+	 font-size: 14px;
+	 padding: 8px 0px;
+    text-align: center;
+    display: block;
+    color: #808080;
+    /*width: 2vh;*/
+}
+.right-top{
+	background: #e6ebf0;
+	/*text-align: center;*/
+	font-size: 17px;
+	/*width: 75%;*/
+	height: 2vh;
+	min-width: 320px;
+	display: flex;
+	flex-flow: column nowrap;
+	position: relative;
+	padding: 8px 0px;
+	text-align: center;
+	color: #808080;
+	border-bottom: 1px solid #d4dee9;
+	font-size: 14px;
+
+}
+.column-product{
+	text-align: left;
+	padding-left: 20px;
+	word-wrap: break-word;
+	max-width: 70px;
+}
+.column-unitprice{
+	text-align: center;
+}
+.column-quantity{
+	text-align: right;
+}
+.column-delete-product{
+	text-align: right;
+
+}
+.column-total{
+	text-align: right;
+	padding-right: 20px;
+}
+.order-details-price{
+	display: flex;	
+	justify-content: flex-end;
+	font-size: 19px;
+	padding-right:40px;
+}
+.order-details-currency{
+	display: flex;	
+	justify-content: flex-end;
+	font-size: 10px;
+	padding-right:40px;
+}
+.order-details-customer{
+	color:#808080;
+	font-size: 15px;
+}
+.order-details-ordered{
+	color:#808080;
+	font-size: 15px;
+}
+.order-details-shipped{
+	color:#808080;
+	font-size: 15px;
+}
+.intime{
+	color: green;
+	display: flex;
+	font-size: 14px;
+	flex: 5 1 150px;
+	justify-content: flex-end;
+}
+.urgent{
+	color: orange;
+	display: flex;
+	flex: 5 1 150px;
+	justify-content: flex-end;
+}
+.footer{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	background: #2b3845;
+	max-width: 1200;
+}
+.footer-left{
+	display: flex;
+	flex: 0 0 auto;	
+	max-width: 300;
+	border-right: 5px solid red;
+	
+	
+}
+.footer-right{
+	display: flex;
+	flex: 0 0 auto;	
+	background: #e6ebf0;	
+	max-width: 700;
+	justify-content: center;
+	font-size: 16px;
+}
+.fas{
+	font-size: 26px;
+	color: darkblue;
+}
+.left{
+	display: flex;
+	flex-direction: column;	
+	min-height: 95%;
+	max-height: 95%;	
+	max-width: 300;	
+	flex: 0.7 1 80px;
+
+	
+	background:white;	
+	flex-wrap: wrap;
+
+}
+#order-list-search{
+	width: 260;
+}
+
+#products-search{
+	height: 20;
+}
+
+.order-search { 
+    position: relative; 
+}
+
+.order-search .inner-addon {
+  position: absolute;
+  right: 10px;
+  padding: 3px;
+  /*pointer-events: none;*/
+  width :15px;
+}
+.orders-after-search {
+	display: flex;	
+	flex-wrap: wrap;	
+	
+	max-width: 300;
+	overflow-y: scroll;
+	
+	align-items: flex-start;
+	
+	background:white;	
+}
+
+.divv{
+	display: flex;	
+	justify-content: space-between;
+	align-items: center;
+	 position: relative; 
+
+}
+
+.divv .inner-addon {
+  position: absolute;
+  right: 20px;
+  padding: 5px;
+  /*pointer-events: none;*/
+  width :15px;
+}
+
+.b-container{
+    width:200px;
+    height:150px;
+    background-color: #ccc;
+    margin:0px auto;
+    padding:10px;
+    font-size:28px;
+    color: #fff;
+}
+.b-popup{
+    width:100%;
+    min-height:100%;
+    background-color: rgba(0,0,0,0.5);
+    overflow:hidden;
+    position:fixed;
+    top:0px;
+}
+.b-popup .b-popup-content{
+    margin:40px auto 0px auto;
+    width:100px;
+    height: 40px;
+    padding:10px;
+    background-color: #c5c5c5;
+    border-radius:5px;
+    box-shadow: 0px 0px 10px #000;
+}
+.right-inner{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: stretch;
+	overflow-y: auto;
+	flex: 1.6 1 300px;
+	max-width: 700;
+	min-height: 95%;
+	max-height: 95%;	
+	background: #fafafa;
+}
+
+#icon-add-order{
+	margin-right: 15px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#new-product-icon{
+	width: 15;
+}
+
+.edit-ship{
+	padding-right: 15;
+	color: darkblue;
+	font-size: 12;
+}
+
+.input-ship-adr{
+	padding: 3px;
+	width: 300;
+	height: 19px;
+}
+.kks{
+	display: flex;
+	flex-direction: column;
+	max-height: 300;
+	flex: 1 0 auto;
+	/*overflow-y: scroll;*/
+}
+.cssload-thecube {
+	width: 73px;
+	height: 73px;
+	margin: 0 auto;
+	margin-top: 49px;
+	position: relative;
+	transform: rotateZ(45deg);
+		-o-transform: rotateZ(45deg);
+		-ms-transform: rotateZ(45deg);
+		-webkit-transform: rotateZ(45deg);
+		-moz-transform: rotateZ(45deg);
+}
+.cssload-thecube .cssload-cube {
+	position: relative;
+	transform: rotateZ(45deg);
+		-o-transform: rotateZ(45deg);
+		-ms-transform: rotateZ(45deg);
+		-webkit-transform: rotateZ(45deg);
+		-moz-transform: rotateZ(45deg);
+}
+.cssload-thecube .cssload-cube {
+	float: left;
+	width: 50%;
+	height: 50%;
+	position: relative;
+	transform: scale(1.1);
+		-o-transform: scale(1.1);
+		-ms-transform: scale(1.1);
+		-webkit-transform: scale(1.1);
+		-moz-transform: scale(1.1);
+}
+.cssload-thecube .cssload-cube:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgb(43,160,199);
+	animation: cssload-fold-thecube 1.32s infinite linear both;
+		-o-animation: cssload-fold-thecube 1.32s infinite linear both;
+		-ms-animation: cssload-fold-thecube 1.32s infinite linear both;
+		-webkit-animation: cssload-fold-thecube 1.32s infinite linear both;
+		-moz-animation: cssload-fold-thecube 1.32s infinite linear both;
+	transform-origin: 100% 100%;
+		-o-transform-origin: 100% 100%;
+		-ms-transform-origin: 100% 100%;
+		-webkit-transform-origin: 100% 100%;
+		-moz-transform-origin: 100% 100%;
+}
+.cssload-thecube .cssload-c2 {
+	transform: scale(1.1) rotateZ(90deg);
+		-o-transform: scale(1.1) rotateZ(90deg);
+		-ms-transform: scale(1.1) rotateZ(90deg);
+		-webkit-transform: scale(1.1) rotateZ(90deg);
+		-moz-transform: scale(1.1) rotateZ(90deg);
+}
+.cssload-thecube .cssload-c3 {
+	transform: scale(1.1) rotateZ(180deg);
+		-o-transform: scale(1.1) rotateZ(180deg);
+		-ms-transform: scale(1.1) rotateZ(180deg);
+		-webkit-transform: scale(1.1) rotateZ(180deg);
+		-moz-transform: scale(1.1) rotateZ(180deg);
+}
+.cssload-thecube .cssload-c4 {
+	transform: scale(1.1) rotateZ(270deg);
+		-o-transform: scale(1.1) rotateZ(270deg);
+		-ms-transform: scale(1.1) rotateZ(270deg);
+		-webkit-transform: scale(1.1) rotateZ(270deg);
+		-moz-transform: scale(1.1) rotateZ(270deg);
+}
+.cssload-thecube .cssload-c2:before {
+	animation-delay: 0.165s;
+		-o-animation-delay: 0.165s;
+		-ms-animation-delay: 0.165s;
+		-webkit-animation-delay: 0.165s;
+		-moz-animation-delay: 0.165s;
+}
+.cssload-thecube .cssload-c3:before {
+	animation-delay: 0.33s;
+		-o-animation-delay: 0.33s;
+		-ms-animation-delay: 0.33s;
+		-webkit-animation-delay: 0.33s;
+		-moz-animation-delay: 0.33s;
+}
+.cssload-thecube .cssload-c4:before {
+	animation-delay: 0.495s;
+		-o-animation-delay: 0.495s;
+		-ms-animation-delay: 0.495s;
+		-webkit-animation-delay: 0.495s;
+		-moz-animation-delay: 0.495s;
+}
+
+
+
+@keyframes cssload-fold-thecube {
+	0%, 10% {
+		transform: perspective(136px) rotateX(-180deg);
+		opacity: 0;
+	}
+	25%,
+				75% {
+		transform: perspective(136px) rotateX(0deg);
+		opacity: 1;
+	}
+	90%,
+				100% {
+		transform: perspective(136px) rotateY(180deg);
+		opacity: 0;
+	}
+}
+
+@-o-keyframes cssload-fold-thecube {
+	0%, 10% {
+		-o-transform: perspective(136px) rotateX(-180deg);
+		opacity: 0;
+	}
+	25%,
+				75% {
+		-o-transform: perspective(136px) rotateX(0deg);
+		opacity: 1;
+	}
+	90%,
+				100% {
+		-o-transform: perspective(136px) rotateY(180deg);
+		opacity: 0;
+	}
+}
+
+@-ms-keyframes cssload-fold-thecube {
+	0%, 10% {
+		-ms-transform: perspective(136px) rotateX(-180deg);
+		opacity: 0;
+	}
+	25%,
+				75% {
+		-ms-transform: perspective(136px) rotateX(0deg);
+		opacity: 1;
+	}
+	90%,
+				100% {
+		-ms-transform: perspective(136px) rotateY(180deg);
+		opacity: 0;
+	}
+}
+
+@-webkit-keyframes cssload-fold-thecube {
+	0%, 10% {
+		-webkit-transform: perspective(136px) rotateX(-180deg);
+		opacity: 0;
+	}
+	25%,
+				75% {
+		-webkit-transform: perspective(136px) rotateX(0deg);
+		opacity: 1;
+	}
+	90%,
+				100% {
+		-webkit-transform: perspective(136px) rotateY(180deg);
+		opacity: 0;
+	}
+}
+
+@-moz-keyframes cssload-fold-thecube {
+	0%, 10% {
+		-moz-transform: perspective(136px) rotateX(-180deg);
+		opacity: 0;
+	}
+	25%,
+				75% {
+		-moz-transform: perspective(136px) rotateX(0deg);
+		opacity: 1;
+	}
+	90%,
+				100% {
+		-moz-transform: perspective(136px) rotateY(180deg);
+		opacity: 0;
+	}
+}

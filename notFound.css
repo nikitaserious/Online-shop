@@ -1,0 +1,15 @@
+#body-layer
+{
+	height: 100vh;
+	overflow: hidden;
+	padding-top: 100px;
+	text-align: center;
+	background: -webkit-linear-gradient(top, #9cbedc, #dfe4e8);
+}
+.not-found {
+	font-size: 210px !important;
+}
+
+.go-back {
+	font-size: 22px;
+}

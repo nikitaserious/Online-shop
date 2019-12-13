@@ -1,0 +1,255 @@
+<html>
+
+<head>
+	<link href="style.css" rel="stylesheet">
+	<!-- <script src="https://kit.fontawesome.com/b7affe20e9.js" crossorigin="anonymous"></script>	 -->
+	<!-- <script src="MVC.js" type="text/javascript"></script> -->
+	<script src="view.js" type="text/javascript"></script>
+	<script src="model.js" type="text/javascript"></script>
+	<script src="controller.js" type="text/javascript"></script>
+	<!-- <script src="events.js" type="text/javascript"></script> -->
+	<!-- <script src="data.js" type="text/javascript"></script>	 -->
+	<script src="https://api-maps.yandex.ru/2.1/?apikey=85a8aa1e-f33c-4117-aef3-0065657981ba&lang=en_US" type="text/javascript"></script>	
+	<title>Shop</title>
+</head>
+
+<body onload="controller.GetCurrentID()">
+	<div class="page">
+		
+		<div class="left">
+			<header>
+				<span id="numberOrders">Orders(10)</span>
+				<div class="order-search" id="order-search">
+					<img src="icons/search.svg" onclick="controller.SearchOrder()" class="inner-addon">
+					<input type="text" id="order-list-search" placeholder="Поиск">
+				</div>
+			</header>
+			<div class="order-list">				
+				<div class="kks" id="kks">
+					<script>
+						controller.FillOrderList();
+					</script>
+				</div>
+			</div>
+			<div id="myModal" class="modal">
+
+				<!-- Modal content -->
+				<div class="modal-content">
+					<span class="close" id="cross" onclick="view.PopUpHide()">&times;</span>
+					<!-- <p>You can create new order here</p> -->
+					<div class="container">
+						<h3>You can create new order here</h3>
+						<p>Please fill in this form to create a new order.</p>
+						<hr>
+						<p>Info about order:</p>
+						<b>Customer</b>
+						<input type="text" id="customer" required>
+
+						<b>Status</b>
+						<input type="text" id="status" required>
+
+						<b>Total price</b>
+						<input type="text" id="totalPrice" required><br>
+
+						<b>Currency</b>
+						<input type="text" id="currency" required>
+						<hr>
+						<p>Info about shipment address:</p>
+						<b>Name</b>
+						<input type="text" placeholder="Name of organization..." id="name" required>
+
+						<b>Address</b>
+						<input type="text" id="address" required>
+
+						<b>ZIP</b>
+						<input type="text" placeholder="246100" id="ZIP" required><br>
+
+						<b>Region</b>
+						<input type="text" placeholder="Minsk" id="region" required>
+
+						<b>Country</b>
+							<input type="text" placeholder="Belarus" id="country" required>
+							<hr>
+							<p>Info about customer:</p>
+
+							<b>First name</b>
+							<input type="text" id="firstName" required>
+
+							<b>Last name</b>
+							<input type="text" id="lastName" required>
+
+							<b>Address</b>
+							<input type="text" placeholder="Minsk, Belarus" id="address1" required><br>
+
+							<b>Phone</b>
+							<input type="text" id="phone" required>
+
+							<b>Email</b>
+							<input type="text" id="email" required>
+
+
+							<hr>
+
+
+							<button type="submit" class="registerbtn" onclick="controller.CreateNewOrder()">Create</button>
+					</div>
+
+
+				</div>
+
+			</div>
+			<div id="myModalNewProd" class="modal">
+
+				<!-- Modal content -->
+				<div class="modal-content">
+					<span class="close" id="cross" onclick="view.PopUpHideNewProduct()">&times;</span>
+					<!-- <p>You can create new order here</p> -->
+					<div class="container">
+						<h3>You can create new product here</h3>
+						<p>Please fill in this form to create a new product.</p>
+						<hr>
+						<p>Info about product:</p>
+						<b>Name</b>
+						<input type="text" id="nameProd" required>
+
+						<b>Price</b>
+						<input type="text" id="priceProd" required>
+
+						<b>Quantity</b>
+						<input type="text" id="quantityProd" required><br>
+
+						<b>Currency</b>
+						<input type="text" id="currencyProd" required>
+
+						<b>Total Price</b>
+						<input type="text" id="totalPriceProd" required>
+						<hr>
+						
+
+
+							<button type="submit" class="registerbtn" id="new-product-button" onclick="controller.CreateNewProduct()">Create</button>
+					</div>
+
+
+				</div>
+
+			</div>
+			<div id="myModalDelOrd" class="modal">
+
+				<!-- Modal content -->
+				<div class="modal-content">
+					<span class="close" id="cross" onclick="view.PopUpHideDelOrd()">&times;</span>
+					<!-- <p>You can create new order here</p> -->
+					<div class="container">
+						<h3>Are you sure want to delete order?</h3>
+						
+
+
+							<button type="submit" class="registerbtn" id="delete-order-button" onclick="controllerDeleteOrder()">Yes</button>
+							<button type="submit" class="registerbtn" onclick="view.PopUpHideDelOrd()">No</button>
+					</div>
+
+
+				</div>
+
+			</div>
+			<div id="myModalDelProd" class="modal">
+
+				<!-- Modal content -->
+				<div class="modal-content">
+					<span class="close" id="cross" onclick="view.PopUpHideDelProd()">&times;</span>
+					<!-- <p>You can create new order here</p> -->
+					<div class="container">
+						<h3>Are you sure want to delete product?</h3>
+						
+
+
+							<button type="submit" class="registerbtn" id="delete-product-button" onclick="controller.DeleteProduct()">Yes</button>
+							<button type="submit" class="registerbtn" onclick="view.PopUpHideDelProd()">No</button>
+					</div>
+
+
+				</div>
+
+			</div>
+
+			<footer>
+				<img src="icons/add(1).svg" height="30" id="icon-add-order" onclick="view.PopUpShow()">
+			</footer>
+		</div>
+		<div class="right">
+			<header class="right-top">Order
+					<hr>
+				</header>
+			<div class="right-inner">
+				
+				<div class="order-details">
+					<div class="order-details-left" id="kek">
+						
+						<span><i class="fas fa-truck"></i>
+							<i class="fas fa-user-alt"></i></span>
+					</div>
+					<div class="order-details-right" id="order-details-right">
+						
+					</div>
+				</div>
+				<div class="HR" id="lol">
+					<span class="divv" id="divv">
+					<h3>Shipping address</h3>
+					<p class="edit-ship" id="edit-ship" onclick="controller.EditShip(num)">Edit</p>
+					</span>
+					<hr>
+				</div>
+				<div class="shipping-address">
+					<div class="shipping-params" id="shipping-params">
+						<div>Name: </div>
+						<div>Street: </div>
+						<div>ZIP Code / City: </div>
+						<div>Region: </div>
+						<div>Country: </div>
+					</div>
+					<div class="shipping-values" id="shipping-values">
+						
+					</div>
+				</div>
+				<div class="HR">
+					<hr>
+					<span class="divv">
+						<h3 id="productsNumber">Line items(4)</h3>
+						<span>						
+						<input type="text" id="product-search" placeholder="Поиск">
+						<img src="icons/search.svg" id="product-search-icon" onclick="SearchProduct()" class="inner-addon">
+						<img src="icons/add(2).svg" id="new-product-icon" onclick="view.PopUpShowNewProduct()"></span>
+						
+					</span>
+				</div>
+				<table id="table">
+
+					<tr>
+						<th class="column-product">Product</th>
+						<th>Unit Price</th>
+						<th class="column-quantity">Quantity</th>
+						<th class="column-total">Total</th>
+					</tr>
+
+					
+				</table>
+			</div>
+			<footer>
+				<div class="cssload-thecube" id="anim">
+		<!-- <div class="cssload-cube cssload-c1"></div>
+		<div class="cssload-cube cssload-c2"></div>
+		<div class="cssload-cube cssload-c4"></div>
+		<div class="cssload-cube cssload-c3"></div> -->
+</div>
+				<img src="icons/delete.svg" height="20" id="delete-order-icon" onclick="view.PopUpShowdDelOrd()">
+				Delete order
+
+			</footer>
+
+		</div>
+	</div>
+	<script>controller.FillOrderList()</script>
+</body>
+
+</html>
